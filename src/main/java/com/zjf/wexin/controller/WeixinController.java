@@ -19,7 +19,7 @@ import java.util.Map;
 public class WeixinController {
 
     @RequestMapping(value = "/wexin",method = RequestMethod.GET)
-    public void getWeixin(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void getWeixin1(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String signature=req.getParameter("signature");
         String timestamp=req.getParameter("timestamp");
         String nonce=req.getParameter("nonce");
