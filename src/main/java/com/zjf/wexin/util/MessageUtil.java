@@ -10,10 +10,10 @@ import org.dom4j.io.SAXReader;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MessageUtil {
 
@@ -111,7 +111,7 @@ public class MessageUtil {
     public static String initImageMessage(String toUserName,String fromUserName){
         String message = null;
         Image image = new Image();
-        image.setMediaId("0ThxLPt1AFl2iP-Ay2Dh6eLO1BMurwu0Q-syCwx95iYgJc8xh41i15Wyu4vpnqf-");
+        image.setMediaId("nYH6jc1tQvbmQ2H_PLkcBA4-6p6vYAtZ48_8LGdKJFfnj_BaeSCDxdmuVBqPIECQ");
         ImageMessage imageMessage = new ImageMessage();
         imageMessage.setFromUserName(toUserName);
         imageMessage.setToUserName(fromUserName);
@@ -134,8 +134,8 @@ public class MessageUtil {
         music.setThumbMediaId("Butn96SmHf_yHvE82yGgJVah9LpQmxiY6fFmgteCwe5H9zpJg9n0CAgLHtADgVYc");
         music.setTitle("see you again");
         music.setDescription("速7片尾曲");
-        music.setMusicUrl("http://pnrbge.natappfree.cc/music/1.mp3");
-        music.setHQMusicUrl("http://pnrbge.natappfree.cc/music/1.mp3");
+        music.setMusicUrl("http://95jwf3.natappfree.cc/music/1.mp3");
+        music.setHQMusicUrl("http://95jwf3.natappfree.cc/music/1.mp3");
 
         MusicMessage musicMessage = new MusicMessage();
         musicMessage.setFromUserName(toUserName);
@@ -148,21 +148,24 @@ public class MessageUtil {
     }
     public static String first(){
         StringBuffer stringBuffer=new StringBuffer();
-        stringBuffer.append("本公众号完全由开发者自主开发，仅供娱乐,本公众号提供翻译以及一些基础功能!\n");
+        stringBuffer.append("本公众号完全由开发者自主开发，仅供娱乐,本公众号提供翻译,讲笑话以及一些基础功能!后续功能正在完善，欢迎" +
+                "提建议。\n");
         return stringBuffer.toString();
     }
     public static String mainMenu(){
         StringBuffer sb = new StringBuffer();
-        sb.append("欢迎您的关注，请按照菜单提示进行操作：\n\n");
-        sb.append("1、公众号介绍\n");
-        sb.append("2、图文介绍\n");
-        sb.append("3、获取图片\n");
-        sb.append("4、获取音乐\n");
-        sb.append("5、翻译功能介绍\n");
-        sb.append("回复？调出此菜单。");
+        sb.append("欢迎您的关注，本公众号提供智能机器人对话与讲笑话服务！\n");
+        sb.append("1、例：讲个笑话\n");
+        sb.append("2、或者回复任意内容\n");
+//        sb.append("2、图文介绍\n");
+//        sb.append("3、获取图片\n");
+//        sb.append("4、获取音乐\n");
+//        sb.append("5、翻译功能介绍\n");
+//        sb.append("6、讲笑话功能介绍\n");
+//        sb.append("回复？调出此菜单。");
         return sb.toString();
     }
-    public static String sixMenu(){
+    public static String fiveMenu(){
         StringBuffer sb = new StringBuffer();
         sb.append("词组翻译使用指南\n\n");
         sb.append("使用示例：\n");
@@ -170,6 +173,11 @@ public class MessageUtil {
         sb.append("翻译中国足球\n");
         sb.append("翻译football\n\n");
         sb.append("回复？显示主菜单。");
+        return sb.toString();
+    }
+    public static String sixMenu(){
+        StringBuffer sb = new StringBuffer();
+        sb.append("回复：讲个笑话，即可获取\n\n");
         return sb.toString();
     }
 }

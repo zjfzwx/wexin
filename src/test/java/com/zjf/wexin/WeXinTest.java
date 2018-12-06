@@ -2,9 +2,8 @@ package com.zjf.wexin;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zjf.wexin.po.AccessToken;
-import com.zjf.wexin.util.Translate;
-import com.zjf.wexin.util.UploadMaterial;
-import com.zjf.wexin.util.WeixinUtil;
+import com.zjf.wexin.util.*;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -18,7 +17,7 @@ public class WeXinTest {
         AccessToken token= WeixinUtil.getAccessToken();
        System.out.println(token.getToken());
        System.out.println(token.getExpiresIn() );
-        String path="E:\\wexin1\\src\\main\\resources\\static\\images\\1.jpg";
+        String path="E:\\wexin1\\src\\main\\resources\\static\\images\\1_BigPic.jpg";
         try {
             String mediaId= UploadMaterial.upload(path,token.getToken(),"image");
             System.out.println(mediaId);
@@ -68,5 +67,23 @@ public class WeXinTest {
             e.printStackTrace();
         }
         System.out.println(result);
+    }
+    @Test
+    public void getJoke(){
+        System.out.println(Joke.getJoke());
+    }
+    @Test
+    public void jsonTest(){
+        String name="hello";
+        JSONObject obj=JSONObject.parseObject(name);
+        System.out.println(obj);
+    }
+    @Test
+    public void md5Test(){
+        System.out.println(new Md5Hash("20180820000196568name99ZCITcCdlr6Yo35nA5LzI"));
+    }
+    @Test
+    public void mapTest(){
+
     }
 }

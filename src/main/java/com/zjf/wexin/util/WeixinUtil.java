@@ -7,12 +7,8 @@ import com.zjf.wexin.menu.Menu;
 import com.zjf.wexin.menu.ViewButton;
 import com.zjf.wexin.po.AccessToken;
 import org.apache.http.ParseException;
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
+
+import java.io.IOException;
 
 public class WeixinUtil {
     private static final String APPID="wxce78491fdf01cffb";
@@ -66,7 +62,7 @@ public class WeixinUtil {
         ViewButton button2 = new ViewButton();
         button2.setName("view菜单");
         button2.setType("view");
-        button2.setUrl("http://www.imooc.com");
+        button2.setUrl("https://www.baidu.com");
 
         ClickButton button3_1 = new ClickButton();
         button3_1.setName("扫码事件");
