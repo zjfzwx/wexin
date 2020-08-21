@@ -26,14 +26,12 @@ public class UnitService {
             String accessToken = AuthService.getAuth();
             String result = HttpUtil.post(talkUrl, accessToken, "application/json", params);
             JSONObject jsonObject= JSON.parseObject(result);
-            System.out.println(jsonObject);
             String result1=jsonObject.getString("result");
             JSONObject jsonObject1=JSON.parseObject(result1);
             String response=jsonObject1.getString("response");
             JSONObject jsonObject3=JSON.parseObject(response);
             JSONArray jsarr=jsonObject3.getJSONArray("action_list");
             return jsarr.getJSONObject(0).get("say").toString();
-
         } catch (Exception e) {
             e.printStackTrace();
         }

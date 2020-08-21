@@ -12,7 +12,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import javax.crypto.spec.SecretKeySpec;
-import sun.misc.BASE64Encoder;
+
+import com.thoughtworks.xstream.core.util.Base64Encoder;
 import javax.crypto.Mac;
 @SuppressWarnings("restriction")
 public class AESDecode {
@@ -29,8 +30,8 @@ public class AESDecode {
             mdTemp = MessageDigest.getInstance("MD5");
             mdTemp.update(utfBytes);
             byte[] md5Bytes = mdTemp.digest();
-            BASE64Encoder b64Encoder = new BASE64Encoder();
-            encodeStr = b64Encoder.encode(md5Bytes);
+            Base64Encoder base64Encoder=new Base64Encoder();
+            encodeStr = base64Encoder.encode(md5Bytes);
         } catch (Exception e) {
             throw new Error("Failed to generate MD5 : " + e.getMessage());
         }
@@ -46,7 +47,7 @@ public class AESDecode {
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(signingKey);
             byte[] rawHmac = mac.doFinal(data.getBytes());
-            result = (new BASE64Encoder()).encode(rawHmac);
+            result = (new Base64Encoder()).encode(rawHmac);
         } catch (Exception e) {
             throw new Error("Failed to generate HMAC : " + e.getMessage());
         }
