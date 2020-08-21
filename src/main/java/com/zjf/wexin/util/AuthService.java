@@ -57,9 +57,9 @@ public class AuthService {
             // 获取所有响应头字段
             Map<String, List<String>> map = connection.getHeaderFields();
             // 遍历所有的响应头字段
-            for (String key : map.keySet()) {
-                System.err.println(key + "--->" + map.get(key));
-            }
+//            for (String key : map.keySet()) {
+//                System.err.println(key + "--->" + map.get(key));
+//            }
             // 定义 BufferedReader输入流来读取URL的响应
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String result = "";
@@ -70,10 +70,10 @@ public class AuthService {
             /**
              * 返回结果示例
              */
-            System.err.println("result:" + result);
+//            System.err.println("result:" + result);
             JSONObject jsonObject = new JSONObject(result);
             String access_token = jsonObject.getString("access_token");
-            System.out.println(access_token);
+//            System.out.println(access_token);
             return access_token;
         } catch (Exception e) {
             System.err.printf("获取token失败！");

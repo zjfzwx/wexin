@@ -64,7 +64,6 @@ public class WeixinController {
             if ("讲个笑话".equals(content)) {
                 message = MessageUtil.initText(toUserName, formUserName, Joke.getJoke());
             } else {
-                System.out.println(content);
                 message = MessageUtil.initText(toUserName, formUserName, UnitService.utterance(content));
             }
 
